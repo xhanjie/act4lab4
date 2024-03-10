@@ -1,18 +1,18 @@
-// LoginPage.js
-
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Text, TextInput, Button } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Header from '../component/Header';
 
-const LoginPage = ({ navigation }) => {
-  const handleLogin = () => {
-    // For demonstration purposes, let's assume successful login
-    navigation.navigate('Page1');
-  };
+const RegistrationScreen = ({ navigation }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignUp = () => {
-    navigation.navigate('Registration');
+  const handleRegister = () => {
+    console.log('handleRegister function called');
+    // Perform registration logic here
+    // Assuming registration is successful, navigate back to Login page
+    navigation.goBack(); // Navigate back to the previous screen (Login page)
   };
 
   return (
@@ -23,17 +23,28 @@ const LoginPage = ({ navigation }) => {
           <Text style={styles.label}>Username:</Text>
           <TextInput
             style={styles.input}
+            value={username}
+            onChangeText={setUsername}
             placeholder="Enter your username"
           />
           <Text style={styles.label}>Password:</Text>
           <TextInput
             style={styles.input}
+            value={password}
+            onChangeText={setPassword}
             secureTextEntry={true}
             placeholder="Enter your password"
           />
+          <Text style={styles.label}>Confirm Password:</Text>
+          <TextInput
+            style={styles.input}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
+            secureTextEntry={true}
+            placeholder="Confirm password"
+          />
           <View style={styles.buttonContainer}>
-            <Button title="Login" onPress={handleLogin} />
-            <Button title="Sign-Up" onPress={handleSignUp} />
+            <Button style={styles.button} title="Register" onPress={handleRegister} />
           </View>
         </View>
       </View>
@@ -75,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginPage;
+export default RegistrationScreen;
