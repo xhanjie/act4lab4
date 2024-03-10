@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TextInput, Button } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Header from '../component/Header';
 
@@ -10,9 +10,8 @@ const RegistrationScreen = ({ navigation }) => {
 
   const handleRegister = () => {
     console.log('handleRegister function called');
-    // Perform registration logic here
-    // Assuming registration is successful, navigate back to Login page
-    navigation.goBack(); // Navigate back to the previous screen (Login page)
+   
+    navigation.goBack();
   };
 
   return (
@@ -20,14 +19,14 @@ const RegistrationScreen = ({ navigation }) => {
       <View style={styles.container}>
         <Header />
         <View style={styles.content}>
-          <Text style={styles.label}>Username:</Text>
+          <Text style={styles.label}></Text>
           <TextInput
             style={styles.input}
             value={username}
             onChangeText={setUsername}
             placeholder="Enter your username"
           />
-          <Text style={styles.label}>Password:</Text>
+          <Text style={styles.label}></Text>
           <TextInput
             style={styles.input}
             value={password}
@@ -35,7 +34,7 @@ const RegistrationScreen = ({ navigation }) => {
             secureTextEntry={true}
             placeholder="Enter your password"
           />
-          <Text style={styles.label}>Confirm Password:</Text>
+          <Text style={styles.label}></Text>
           <TextInput
             style={styles.input}
             value={confirmPassword}
@@ -44,7 +43,9 @@ const RegistrationScreen = ({ navigation }) => {
             placeholder="Confirm password"
           />
           <View style={styles.buttonContainer}>
-            <Button style={styles.button} title="Register" onPress={handleRegister} />
+            <TouchableOpacity onPress={handleRegister} style={styles.button}>
+              <Text style={styles.buttonText}>Register</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -68,12 +69,20 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '75%',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button: {
-    width: '30%', // Adjust the width as needed
+    width: '45%', // Adjust the width as needed
+    backgroundColor: '#1A2F36', // Set button background color
+    borderRadius: 5, // Add border radius for rounded corners
+    paddingVertical: 10, // Add padding vertically
+    alignItems: 'center', // Center content horizontally
+  },
+  buttonText: {
+    color: '#fff', // Set text color
+    fontSize: 16, // Set text font size
   },
   input: {
     width: '75%',

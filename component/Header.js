@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   HeaderTitle: {
     fontSize: 24,
-    color: 'red',
+    color: '#C76D31',
     marginBottom: 10
   }
 });

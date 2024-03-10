@@ -5,9 +5,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Header from './component/Header';
-import LoginPage from './screens/LoginPage'; // Corrected import path
-import Page1 from './screens/Page1'; // Corrected import path
-import Registration from './screens/Registration'; // Corrected import path
+import LoginPage from './screens/LoginPage'; 
+import Page1 from './screens/page1'; 
+import Registration from './screens/Registration';
+import ForgotPasswordScreen from './screens/ForgotPasswordScreen'; 
+
 
 const Stack = createStackNavigator();
 
@@ -36,6 +38,11 @@ export default function App() {
             component={Registration} // Updated import path
             options={{ title: 'Registration' }}
           />
+          <Stack.Screen
+            name="ForgotPasswordScreen"
+            component={ForgotPasswordScreen}
+            options={{ title: 'Forgot Password' }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
@@ -51,8 +58,8 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Header />
       <View style={styles.content}>
-        <h1>{"Let's get Started"} </h1>
-        <Button title="Login" onPress={handleLoginPress} />
+      <h1 style={{ color: '#C76D31' }}>Let's get Started</h1>
+        <Button title="Login" onPress={handleLoginPress} color="#1A2F36" />
       </View>
       <StatusBar style="auto" />
     </View>
