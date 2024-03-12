@@ -11,6 +11,7 @@ import Registration from './screens/Registration';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen'; 
 
 
+
 const Stack = createStackNavigator();
 
 export default function App() {

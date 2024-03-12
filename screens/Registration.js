@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons'; // Import Ionicons or any other icon library you prefer
 import Header from '../component/Header';
 
 const RegistrationScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleRegister = () => {
     console.log('handleRegister function called');
-   
     navigation.goBack();
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   return (
@@ -27,21 +37,39 @@ const RegistrationScreen = ({ navigation }) => {
             placeholder="Enter your username"
           />
           <Text style={styles.label}></Text>
-          <TextInput
-            style={styles.input}
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry={true}
-            placeholder="Enter your password"
-          />
+          <View style={styles.passwordInputContainer}>
+            <TextInput
+              style={styles.passwordInput}
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry={!showPassword}
+              placeholder="Enter your password"
+            />
+            <TouchableWithoutFeedback onPress={togglePasswordVisibility}>
+              <Ionicons
+                name={showPassword ? 'eye-off' : 'eye'}
+                size={20}
+                color="#aaa"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text style={styles.label}></Text>
-          <TextInput
-            style={styles.input}
-            value={confirmPassword}
-            onChangeText={setConfirmPassword}
-            secureTextEntry={true}
-            placeholder="Confirm password"
-          />
+          <View style={styles.passwordInputContainer}>
+            <TextInput
+              style={styles.passwordInput}
+              value={confirmPassword}
+              onChangeText={setConfirmPassword}
+              secureTextEntry={!showConfirmPassword}
+              placeholder="Confirm password"
+            />
+            <TouchableWithoutFeedback onPress={toggleConfirmPasswordVisibility}>
+              <Ionicons
+                name={showConfirmPassword ? 'eye-off' : 'eye'}
+                size={20}
+                color="#aaa"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <View style={styles.buttonContainer}>
             <TouchableOpacity onPress={handleRegister} style={styles.button}>
               <Text style={styles.buttonText}>Register</Text>
@@ -92,6 +120,20 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     marginBottom: 10,
+  },
+  passwordInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '75%',
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+  },
+  passwordInput: {
+    flex: 1,
   },
 });
 
