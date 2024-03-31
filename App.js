@@ -8,9 +8,8 @@ import Header from './component/Header';
 import LoginPage from './screens/LoginPage'; 
 import Page1 from './screens/page1'; 
 import Registration from './screens/Registration';
-import ForgotPasswordScreen from './screens/ForgotPasswordScreen'; 
-
-
+import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
+import ProductDetails from './screens/ProductDetails'; // Import ProductDetails component
 
 const Stack = createStackNavigator();
 
@@ -44,6 +43,11 @@ export default function App() {
             component={ForgotPasswordScreen}
             options={{ title: 'Forgot Password' }}
           />
+          <Stack.Screen
+            name="ProductDetails"
+            component={ProductDetails} // Add ProductDetails screen
+            options={{ title: 'Product Details' }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
@@ -59,7 +63,7 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Header />
       <View style={styles.content}>
-      <h1 style={{ color: '#C76D31' }}>Let's get Started</h1>
+      
         <Button title="Login" onPress={handleLoginPress} color="#1A2F36" />
       </View>
       <StatusBar style="auto" />
