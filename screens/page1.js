@@ -3,6 +3,7 @@ import { StyleSheet, View, Button, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons'; // Assuming you're using Expo
+import Footer from '../component/footer'; // Import Footer component
 
 const Page1 = () => {
   const navigation = useNavigation();
@@ -102,7 +103,10 @@ const Page1 = () => {
             <Image source={require('../assets/nvme.png')} style={styles.image} />
           </TouchableOpacity>
         </View>
-        <Button title="Logout" onPress={handleLogout} color="#1A2F36" />
+        <View style={styles.buttonContainer}>
+    <Button title="Logout" onPress={handleLogout} color="#1A2F36" />
+  </View>
+
         {isMenuOpen && (
           <View style={styles.menuContainer}>
             <Button title="Profile" onPress={() => console.log("Navigate to Profile")} />
@@ -113,6 +117,9 @@ const Page1 = () => {
           </View>
         )}
       </View>
+
+      {/* Footer component */}
+      <Footer navigation={navigation} />
     </SafeAreaProvider>
   );
 }
@@ -121,6 +128,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    alignItems: 'center', // Center horizontally
+    justifyContent: 'center', // Center vertically
+  },
+  buttonContainer: {
+    width: '40%',
   },
   menuButton: {
     position: 'absolute',

@@ -3,9 +3,9 @@ import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const Footer = ({ navigation }) => {
-  const navigateToSettings = () => {
-    // Navigate to the settings screen
-    navigation.navigate('Settings');
+  const navigateToHome = () => {
+    // Navigate to the home screen
+    navigation.navigate('Home');
   };
 
   const navigateToProfile = () => {
@@ -20,8 +20,8 @@ const Footer = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={navigateToSettings}>
-        <Ionicons name="settings-outline" size={24} color="black" style={styles.icon} />
+      <TouchableOpacity onPress={navigateToHome}>
+        <Ionicons name="home-outline" size={24} color="black" style={styles.icon} />
       </TouchableOpacity>
       <TouchableOpacity onPress={navigateToProfile}>
         <Ionicons name="person-outline" size={24} color="black" style={styles.icon} />
