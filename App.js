@@ -9,7 +9,8 @@ import LoginPage from './screens/LoginPage';
 import Page1 from './screens/page1'; 
 import Registration from './screens/Registration';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
-import ProductDetails from './screens/ProductDetails'; // Import ProductDetails component
+import ProductDetails from './screens/ProductDetails'; 
+import CartPage from './screens/CartPage'; // Import CartPage component
 
 const Stack = createStackNavigator();
 
@@ -30,12 +31,12 @@ export default function App() {
           />
           <Stack.Screen
             name="Page1"
-            component={Page1} // Updated import path
+            component={Page1}
             options={{ title: 'Page 1' }}
           />
           <Stack.Screen
             name="Registration"
-            component={Registration} // Updated import path
+            component={Registration}
             options={{ title: 'Registration' }}
           />
           <Stack.Screen
@@ -45,8 +46,13 @@ export default function App() {
           />
           <Stack.Screen
             name="ProductDetails"
-            component={ProductDetails} // Add ProductDetails screen
+            component={ProductDetails}
             options={{ title: 'Product Details' }}
+          />
+          <Stack.Screen
+            name="CartPage"
+            component={CartPage} // Add CartPage screen
+            options={{ title: 'Cart Page' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -67,7 +67,7 @@ const Page1 = () => {
       default:
         product = {
           name: 'Sample Product',
-          image: require('../assets/sample.png'),
+          image: require('../assets/logo.png'),
           details: 'Product details go here',
         };
     }
