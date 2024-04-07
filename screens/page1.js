@@ -76,6 +76,10 @@ const Page1 = () => {
     navigation.navigate('ProductDetails', { product });
   };
 
+  const navigateToProfile = () => {
+    navigation.navigate('Profile'); // Navigating to the 'Profile' screen
+  };
+
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
@@ -104,12 +108,12 @@ const Page1 = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
-    <Button title="Logout" onPress={handleLogout} color="#1A2F36" />
-  </View>
+          <Button title="Logout" onPress={handleLogout} color="#1A2F36" />
+        </View>
 
         {isMenuOpen && (
           <View style={styles.menuContainer}>
-            <Button title="Profile" onPress={() => console.log("Navigate to Profile")} />
+            <Button title="Profile" onPress={navigateToProfile} />
             <Button title="Category" onPress={() => console.log("Navigate to Category")} />
             <Button title="About Us" onPress={() => console.log("Navigate to About Us")} />
             <Button title="Contact Us" onPress={() => console.log("Navigate to Contact Us")} />

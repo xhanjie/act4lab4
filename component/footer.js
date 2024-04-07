@@ -1,26 +1,24 @@
+// Footer.js
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const Footer = ({ navigation }) => {
-  const navigateToHome = () => {
-    // Navigate to the home screen
-    navigation.navigate('Home');
+  const navigateToPage1 = () => {
+    navigation.navigate('Page1');
   };
 
   const navigateToProfile = () => {
-    // Navigate to the profile screen
     navigation.navigate('Profile');
   };
 
   const navigateToCart = () => {
-    // Navigate to the cart screen
-    navigation.navigate('Cart');
+    navigation.navigate('TotalCart');
   };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={navigateToHome}>
+      <TouchableOpacity onPress={navigateToPage1}>
         <Ionicons name="home-outline" size={24} color="black" style={styles.icon} />
       </TouchableOpacity>
       <TouchableOpacity onPress={navigateToProfile}>
@@ -35,6 +33,9 @@ const Footer = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',

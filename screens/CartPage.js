@@ -22,7 +22,7 @@ const CartPage = ({ route }) => {
       
       {/* Cart icon */}
       <TouchableOpacity
-        onPress={() => navigation.navigate('Cart')}
+        onPress={() => navigation.navigate('CartTotal')} // Navigate to 'CartTotal' screen
         style={{ position: 'absolute', top: 20, right: 20 }}
       >
         <MaterialIcons name="shopping-cart" size={24} color="black" />
