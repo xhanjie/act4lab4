@@ -76,8 +76,24 @@ const Page1 = () => {
     navigation.navigate('ProductDetails', { product });
   };
 
+  const navigateToAboutUs = () => {
+    navigation.navigate('About');
+  };
+
   const navigateToProfile = () => {
-    navigation.navigate('Profile'); // Navigating to the 'Profile' screen
+    navigation.navigate('Profile');
+  };
+
+  const navigateToCategory = () => {
+    navigation.navigate('Category');
+  };
+
+  const navigateToContactUs = () => {
+    navigation.navigate('Contact');
+  };
+
+  const navigateToSettings = () => {
+    navigation.navigate('Setting');
   };
 
   return (
@@ -113,12 +129,13 @@ const Page1 = () => {
 
         {isMenuOpen && (
           <View style={styles.menuContainer}>
-            <Button title="Profile" onPress={navigateToProfile} />
-            <Button title="Category" onPress={() => console.log("Navigate to Category")} />
-            <Button title="About Us" onPress={() => console.log("Navigate to About Us")} />
-            <Button title="Contact Us" onPress={() => console.log("Navigate to Contact Us")} />
-            <Button title="Settings" onPress={() => console.log("Navigate to Settings")} />
-          </View>
+          <Button title="Profile" onPress={navigateToProfile} />
+          <Button title="Category" onPress={navigateToCategory} />
+          <Button title="About Us" onPress={navigateToAboutUs} />
+          <Button title="Contact Us" onPress={navigateToContactUs} />
+          <Button title="Settings" onPress={navigateToSettings} />
+        </View>
+        
         )}
       </View>
 
