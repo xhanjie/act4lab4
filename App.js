@@ -14,7 +14,10 @@ import ProductDetails from './screens/ProductDetails';
 import CartPage from './screens/CartPage'; // Import CartPage component
 import ProfileScreen from './screens/ProfileScreen'; // Import ProfileScreen component
 import CartTotal from './screens/CartTotal'; // Import CartTotal component
-
+import AboutScreen from './screens/AboutScreen';
+import ContactScreen from './screens/ContactScreen';
+import CategoryScreen from './screens/CategoryScreen';
+import SettingScreen from './screens/SettingScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -66,7 +69,28 @@ const StackNavigator = () => (
     component={ProfileScreen} // Add ProfileScreen as a screen
     options={{ title: 'Profile' }} // Set the title of the screen if needed
   />
-  
+    <Stack.Screen
+    name="About"
+    component={AboutScreen} // Add ProfileScreen as a screen
+    options={{ title: 'About Us' }} // Set the title of the screen if needed
+  />
+   <Stack.Screen
+    name="Contact"
+    component={ContactScreen} // Add ProfileScreen as a screen
+    options={{ title: 'Contact Us' }} // Set the title of the screen if needed
+  />
+
+<Stack.Screen
+  name="Category"
+  component={CategoryScreen}
+  options={{ title: 'Category' }}
+/>
+
+  <Stack.Screen
+      name="Setting"
+      component={SettingScreen} // Use the CategoryScreen component
+      options={{ title: 'Setting' }}
+  />
   </Stack.Navigator>
 );
 
