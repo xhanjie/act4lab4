@@ -27,6 +27,7 @@
     "react-native-3d-model-view": "^1.2.0",
     "react-native-gesture-handler": "~2.14.0",
     "react-native-gl-model-view": "^1.6.0",
+    "react-native-maps": "^1.13.0",
     "react-native-paper": "^5.12.3",
     "react-native-reanimated": "~3.6.2",
     "react-native-safe-area-context": "^4.8.2",
