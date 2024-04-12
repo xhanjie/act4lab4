@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Button, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { MaterialIcons } from '@expo/vector-icons'; // Assuming you're using Expo
-import Footer from '../component/footer'; // Import Footer component
+import { MaterialIcons } from '@expo/vector-icons'; 
+import Footer from '../component/footer'; 
 
 const Page1 = () => {
   const navigation = useNavigation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track menu open/close
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
     navigation.navigate('Home');
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle menu state
+    setIsMenuOpen(!isMenuOpen); 
   };
 
   const handleProductPress = (productType) => {
@@ -72,7 +72,7 @@ const Page1 = () => {
         };
     }
 
-    // Navigate to the ProductDetails screen and pass the product as a parameter
+    
     navigation.navigate('ProductDetails', { product });
   };
 
@@ -149,8 +149,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center', // Center horizontally
-    justifyContent: 'center', // Center vertically
+    alignItems: 'center', 
+    justifyContent: 'center',
   },
   buttonContainer: {
     width: '40%',
